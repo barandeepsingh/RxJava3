@@ -35,7 +35,7 @@ public class ObservableCreationOptions {
         Observable<Integer> sourceRange = Observable.range(3,10);
         sourceRange.subscribe(System.out::println);
 
-        
+
 
     }
 
