@@ -11,8 +11,8 @@ public class HelloRxJava3 {
                 }
 
         );
-        source.subscribe(e -> System.out.println("Observer 1: " + e));
-        source.subscribe(e -> System.out.println("Observer 2: " + e));
+        source.subscribe(e -> System.out.println("Observer 1: " + e + " thread " + Thread.currentThread().getName()));
+        source.subscribe(e -> System.out.println("Observer 2: " + e + " thread " + Thread.currentThread().getName()));
     }
 
 }
