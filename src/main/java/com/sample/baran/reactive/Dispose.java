@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Dispose {
     private static final CompositeDisposable compositeDisposable = new CompositeDisposable();
+
     public static void main(String[] args) throws InterruptedException {
 
         Observable<Long> source = Observable.interval(1, TimeUnit.SECONDS);
@@ -16,8 +17,8 @@ public class Dispose {
         //Thread.sleep(5000);
         //d1.dispose();
         @NonNull Disposable d2 = source.subscribe(e -> System.out.println("S2 -> " + e));
-Thread.sleep(5000);
-        compositeDisposable.addAll(d1,d2);
+        Thread.sleep(5000);
+        compositeDisposable.addAll(d1, d2);
         compositeDisposable.dispose();
         Thread.sleep(10000);
         System.out.println("Completed processing");

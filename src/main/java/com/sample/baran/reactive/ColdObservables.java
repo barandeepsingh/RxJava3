@@ -12,7 +12,7 @@ public class ColdObservables {
         namesList.add("C");
         namesList.add("F");
         Observable<String> sourceIterable = Observable.fromIterable(namesList);
-        
+
         sourceIterable.subscribe(System.out::print);
 
         System.out.println();
@@ -23,7 +23,8 @@ public class ColdObservables {
 
 
     }
-    private static List<String> returnUpdatedList(List<String> myList){
+
+    private static List<String> returnUpdatedList(List<String> myList) {
         myList.add("Z");
         return myList;
     }
