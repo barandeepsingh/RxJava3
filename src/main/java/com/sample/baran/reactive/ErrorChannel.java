@@ -9,11 +9,11 @@ import java.io.IOException;
 
 public class ErrorChannel {
     public static void main(String[] args) throws InterruptedException {
-        //exDoOnError();
+        exDoOnError();
         //exOnErrorResumeNext();
         //exOnErrorReturn();
         //exOnErrorReturnItem();
-        exRetryWithPredicate();
+        //exRetryWithPredicate();
     }
 
     private static void exOnErrorResumeNext() {
@@ -21,14 +21,14 @@ public class ErrorChannel {
             return Observable.just(2, 3, 4, 5, 6);
         };
         Observable.error(new Exception("This is an example error"))
-                //           Observable.just(2,3,45,3)
+                      //     Observable.just(2,3,45,3)
                 .onErrorResumeNext(errorHandlingFunction)
                 .subscribe(e -> System.out.println("Result " + e), error -> System.out.println("Subscribed error " + error.getMessage()), () -> System.out.println("Completed"));
     }
 
     private static void exDoOnError() {
-        Observable.error(new Exception("This is an example error"))
-                //    Observable.just(2,3,45,3)
+        //Observable.error(new Exception("This is an example error"))
+                    Observable.just(2,3,45,3)
                 .doOnError(error -> System.out.println("Error: " + error.getMessage()))
                 .subscribe(e -> System.out.println("Result " + e), error -> System.out.println("Subscribed error " + error.getMessage()), () -> System.out.println("Completed"));
     }
