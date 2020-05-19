@@ -7,8 +7,8 @@ import io.reactivex.rxjava3.disposables.Disposable;
 public class OnFinallyDisposeSubscribeDemo {
     public static void main(String[] args) {
         //onFinallyDemo();
-        //onDisposeDemo();
-        onSubscribeDemo();
+        onDisposeDemo();
+        //onSubscribeDemo();
     }
 
     private static void onSubscribeDemo() {
