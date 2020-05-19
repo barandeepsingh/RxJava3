@@ -1,3 +1,5 @@
+package com.sample.baran.lombok;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
